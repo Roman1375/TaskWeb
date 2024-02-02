@@ -1,0 +1,16 @@
+{%  extends 'mainApp/base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block content %}
+    {% for option in options %}
+        {% if option.link|add:"/" == request.path|slice:"3:" %}
+            <h1>{{ option.name }}</h1>
+            <p>{% translate 'Content of the page' %} "{{ option.name }}"</p>
+        {% elif option.link == request.path|slice:"3:" %}
+            <h1>{{ option.name }}</h1>
+            <p>{% translate 'Content of the page' %} "{{ option.name }}"</p>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

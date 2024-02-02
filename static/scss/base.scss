@@ -1,0 +1,25 @@
+@import 'nulling.scss';
+@import "header.scss";
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 40px 10px;
+    box-shadow:inset 0 9px 20px rgba(161, 113, 180, 0.29);
+    position: relative;
+    &::after{
+        content: '';
+        display: block;
+        width: 100vw;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.49) 10%, rgba(252, 70, 243, 0.16) 30%, rgba(255, 255, 255, 0.49) 50%, rgba(252, 70, 243, 0.18) 80%, rgba(255, 255, 255, 0.49) 100%);
+        z-index: -10;
+    }
+}
